@@ -67,17 +67,20 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-p", " ", NULL };
-static const char *termcmd[]  = { "st", NULL };
-static const char *termfmcmd[]  = { "st", "-e", "ranger", NULL };
+static const char *dmenucmd[]     = { "dmenu_run", "-p", " ", NULL };
+static const char *termcmd[]      = { "st", NULL };
+static const char *termfmcmd[]    = { "st","-e", "ranger", NULL };
+static const char *termaudiocmd[] = { "st","-e", "pulsemixer", NULL };
+static const char *webcmd[]       = { "firefox", NULL };
+static const char *scrotcmd[]     = { "scrot", NULL };
 
 static Key keys[] = {
-	/* modifier                     key        function        argument */
-        // Spawn Applications 	
     { MODKEY|ShiftMask,             XK_Return, spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+    { MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_e,      spawn,          {.v = termfmcmd } },
-	
+    { MODKEY,                       XK_s,      spawn,          {.v = termaudiocmd } },
+    { MODKEY|ShiftMask,             XK_s,      spawn,          {.v = scrotcmd } },
+    { MODKEY,                       XK_w,      spawn,          {.v = webcmd } },
     { MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
