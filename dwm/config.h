@@ -28,7 +28,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "TER", "WEB", "SYS", "DEV", "GFX", "MUS", "MUS", "CHAT" };
+static const char *tags[] = { "TER", "WEB", "SYS", "DEV", "GFX", "DOC", "CHAT", "MUS" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -71,7 +71,7 @@ static const char *dmenucmd[]     = { "dmenu_run", "-p", " ", NULL };
 static const char *termcmd[]      = { "st", NULL };
 static const char *termfmcmd[]    = { "st","-e", "ranger", NULL };
 static const char *termaudiocmd[] = { "st","-e", "pulsemixer", NULL };
-static const char *webcmd[]       = { "brave", NULL };
+static const char *webcmd[]       = { "firefox", NULL };
 static const char *scrotcmd[]     = { "scrot", NULL };
 
 static Key keys[] = {
